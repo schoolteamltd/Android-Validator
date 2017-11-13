@@ -63,14 +63,14 @@ dependencies {
     testLocalCompile 'com.google.android:android:4.1.1.4'
     // Android Studio doesn't recognize the `testLocal` task, so we define the same dependencies as above for instrumentTest
     // which is Android Studio's test task
-    //instrumentTestCompile 'junit:junit:4.+'
-    //instrumentTestCompile 'com.android.support:support-v4:26.1.0'
-    //instrumentTestCompile 'org.robolectric:robolectric:2.+'
-    //instrumentTestCompile 'com.google.android:android:4.1.1.4'
+    instrumentTestCompile 'junit:junit:4.+'
+    instrumentTestCompile 'com.android.support:support-v4:26.1.0'
+    instrumentTestCompile 'org.robolectric:robolectric:2.+'
+    instrumentTestCompile 'com.google.android:android:4.1.1.4'
 }
 
 task localTest(type: Test, dependsOn: assemble) {
-    testClassesDir = sourceSets.testLocal.output.classesDir
+    //testClassesDir = sourceSets.testLocal.output.classesDir
 
     android.sourceSets.main.java.srcDirs.each { dir ->
         def buildDir = dir.getAbsolutePath().split('/')
