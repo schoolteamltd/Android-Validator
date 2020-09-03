@@ -54,17 +54,17 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support:support-v4:26.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     // Dependencies for the `testLocal` task, make sure to list all your global dependencies here as well
     testLocalCompile files("$project.buildDir/classes/release")
     testLocalCompile 'junit:junit:4.+'
-    testLocalCompile 'com.android.support:support-v4:26.1.0'
+    testLocalCompile 'androidx.legacy:legacy-support-v4:1.0.0'
     testLocalCompile 'org.robolectric:robolectric:2.+'
     testLocalCompile 'com.google.android:android:4.1.1.4'
     // Android Studio doesn't recognize the `testLocal` task, so we define the same dependencies as above for instrumentTest
     // which is Android Studio's test task
     androidTestImplementation 'junit:junit:4.+'
-    androidTestImplementation 'com.android.support:support-v4:26.1.0'
+    androidTestImplementation 'androidx.legacy:legacy-support-v4:1.0.0'
     androidTestImplementation 'org.robolectric:robolectric:2.+'
     androidTestImplementation 'com.google.android:android:4.1.1.4'
 }
